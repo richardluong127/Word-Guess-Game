@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h3>Press any key to get started!</h3>
+
+    <p id="score"></p>
+    <p id="wordguesstext"></p>
+    <p id="underscores"></p>
+
+    <script type="text/javascript">
+
+        var userGuessLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        // var wordList = [
+        //     "chocobo",
+        //     "rinoa",
+        //     "odin",
+        //     "squall",
+        //     "laguna"
+        // ];
+
+        var computerChoices = ["chocobo", "rinoa", "odin", "squall", "laguna"];
+
+        // var chocobo = ["c", "h", "o", "c", "o", "b", "o"];
+        // var rinoa = ["r", "i", "n", "o", "a"];
+        // var odin = ["o", "d", "i", "n"];
+        // var squall = ["s", "q", "u", "a", "l", "l"];
+        // var laguna = ["l", "a", "g", "u", "n", "a"];
+
+        var underscore1 = "_";
+        var underscore2 = "_";
+        var underscore3 = "_";
+        var underscore4 = "_";
+        var underscore5 = "_";
+        var underscore6 = "_";
+        var underscore7 = "_";
+
+        // var underscoreChocobo = ["_", "_", "_", "_", "_", "_", "_"];
+        // var underscoreRinoa = ["_", "_", "_", "_", "_"];
+        // var underscoreOdin = ["_", "_", "_", "_"];
+        // var underscoreSquall = ["_", "_", "_", "_", "_"];
+        // var underscoreLaguna = ["_", "_", "_", "_", "_", "_"];
+
+        var wordGuessText = document.getElementById("wordguesstext");
+        var underscoresText = document.getElementById("underscores");
+
+
+        document.onkeyup = function (event) {
+
+            var userGuess = event.key;
+            var computerChooses = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log(computerChooses);
+            if (computerChooses === "chocobo") {
+                wordGuessText.textContent = underscore1+" "+underscore2+" "+underscore3+" "+underscore4+" "+underscore5+" "+underscore6+" "+underscore7;
+                for (var i = 0; i < 7; i++) {
+                    if (userGuessLetters[i].charAt(0) === "c" || userGuessLetters[i].charAt(1) === "h" || userGuessLetters[i].charAt(2) === "o" || userGuessLetters[i].charAt(3) === "b" || userGuessLetters[i].charAt(4) === "c"
+                        || userGuessLetters[i].charAt(5) === "b" || userGuessLetters[i].charAt(6) === "o") {
+                        underscoresText.textContent = "Hello World";
+                    }
+                    ;
+                };
+
+                //if ((userGuess))
+
+
+                //for (var i=0; i<guessLetters.length; i++) {
+                //userGuess
+            }
+        }
+
+
+//if (userGuess===)
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
