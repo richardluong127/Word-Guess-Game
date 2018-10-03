@@ -16,6 +16,7 @@
     <p id="score"></p>
     <p id="wordguesstext"></p>
     <p id="underscores"></p>
+    <p id="lettersguessed"></p>
 
     <script type="text/javascript">
 
@@ -37,13 +38,13 @@
         // var squall = ["s", "q", "u", "a", "l", "l"];
         // var laguna = ["l", "a", "g", "u", "n", "a"];
 
+        var underscore0 = "_";
         var underscore1 = "_";
         var underscore2 = "_";
         var underscore3 = "_";
         var underscore4 = "_";
         var underscore5 = "_";
         var underscore6 = "_";
-        var underscore7 = "_";
 
         // var underscoreChocobo = ["_", "_", "_", "_", "_", "_", "_"];
         // var underscoreRinoa = ["_", "_", "_", "_", "_"];
@@ -57,27 +58,49 @@
 
         document.onkeyup = function (event) {
 
-            var userGuess = event.key;
+            var userStart = event.key;
             var computerChooses = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             console.log(computerChooses);
             if (computerChooses === "chocobo") {
-                wordGuessText.textContent = underscore1+" "+underscore2+" "+underscore3+" "+underscore4+" "+underscore5+" "+underscore6+" "+underscore7;
-                for (var i = 0; i < 7; i++) {
-                    if (userGuessLetters[i].charAt(0) === "c" || userGuessLetters[i].charAt(1) === "h" || userGuessLetters[i].charAt(2) === "o" || userGuessLetters[i].charAt(3) === "b" || userGuessLetters[i].charAt(4) === "c"
-                        || userGuessLetters[i].charAt(5) === "b" || userGuessLetters[i].charAt(6) === "o") {
-                        underscoresText.textContent = "Hello World";
+                wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
+                //for (var i = 0; i < 7; i++) {
+                //console.log(i);
+                document.onkeyup = function (event) {
+                    var userGuess = event.key;
+                    var wrongLetters = ["a", "d", "e", "f", "g", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+                    if (userGuess = wrongLetters) {
+                        for (var j = 0; j < wrongLetters.arrayLength; j++) {
+                            lettersguessed.textContent = wrongLetters[j];
+                        }
                     }
-                    ;
-                };
+                    if ((userGuess = "c") || (userGuess = "o") || (userGuess = "b") || (userGuess = "h"))
+                    //if (userGuessLetters[i].charAt(0) === "c" && userGuessLetters[i].charAt(3) === "c")
+                    //|| userGuessLetters[i].charAt(1) === "h" || userGuessLetters[i].charAt(2) === "o" || userGuessLetters[i].charAt(3) === "c" || userGuessLetters[i].charAt(4) === "o"
+                    //|| userGuessLetters[i].charAt(5) === "b" || userGuessLetters[i].charAt(6) === "o") 
+                    {
+                        if (userGuess = "c") {
+                            underscore0 = "C";
+                            underscore3 = "C";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
+                        }
+                        if (userGuess = "h") {
+                            underscore1 = "H";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
+                        }
+                        if (userGuess = "o") {
+                            underscore2 = "O";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
+                        }
+                        if (userGuess = "b") {
+                            underscore5 = "B";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
+                        }
+                    }
 
-                //if ((userGuess))
 
-
-                //for (var i=0; i<guessLetters.length; i++) {
-                //userGuess
+                }
             }
         }
-
 
 //if (userGuess===)
 
