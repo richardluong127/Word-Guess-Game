@@ -8,15 +8,20 @@
     <title>Document</title>
 </head>
 
-<body>
 
+
+<body>
+    <h1 id="FF8wordGuessGame">FF8 Word Guess Game</h1>
 
     <h3>Press any key to get started!</h3>
 
-    <p id="score"></p>
     <p id="wordguesstext"></p>
     <p id="underscores"></p>
-    <p id="lettersguessed"></p>
+    <br>
+    <!--<p id="lettersguessed"></p>-->
+    <p id="victories">Victory:</p>
+    <p id="gameover">Game Over:</p>
+
 
     <script type="text/javascript">
 
@@ -54,6 +59,7 @@
 
         var wordGuessText = document.getElementById("wordguesstext");
         var underscoresText = document.getElementById("underscores");
+        
 
         //indexOf
         //charAt
@@ -62,6 +68,9 @@
             var userStart = event.key;
             var computerChooses = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             console.log(computerChooses);
+           // for ( var f=0; f<7; f++) {
+
+            
             if (computerChooses === "chocobo") {
                 wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
                 //for (var i = 0; i < 7; i++) {
@@ -99,8 +108,140 @@
                             wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
                         }
                     }
-
-
+                }
+            }
+            if (computerChooses === "rinoa") {
+                wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
+                document.onkeyup = function (event) {
+                    var userGuess = event.key;
+                    var wrongLetters = ["b", "c", "d", "e", "f", "g", "h", "j", "k", "l", "m", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
+                    if (userGuess === wrongLetters) {
+                        for (var j = 0; j < wrongLetters.arrayLength; j++) {
+                            lettersguessed.textContent = wrongLetters[j];
+                        }
+                    }
+                    if ((userGuess === "r") || (userGuess === "i") || (userGuess === "n") || (userGuess === "o") || (userGuess === "a")) {
+                        if (userGuess === "r") {
+                            underscore0 = "R";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
+                        }
+                        if (userGuess === "i") {
+                            underscore1 = "I";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
+                        }
+                        if (userGuess === "n") {
+                            underscore2 = "N";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
+                        }
+                        if (userGuess === "o") {
+                            underscore3 = "O";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
+                        }
+                        if (userGuess === "a") {
+                            underscore4 = "A";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
+                        }
+                    }
+                }
+            }
+            if (computerChooses === "odin") {
+                wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3;
+                document.onkeyup = function (event) {
+                    var userGuess = event.key;
+                    var wrongLetters = ["a", "b", "c", "e", "f", "g", "h", "j", "k", "l", "m", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+                    if (userGuess === wrongLetters) {
+                        for (var j = 0; j < wrongLetters.arrayLength; j++) {
+                            lettersguessed.textContent = wrongLetters[j];
+                        }
+                    }
+                    if ((userGuess === "o") || (userGuess === "d") || (userGuess === "i") || (userGuess === "n")) {
+                        if (userGuess === "o") {
+                            underscore0 = "O";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3;
+                        }
+                        if (userGuess === "d") {
+                            underscore1 = "D";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3;
+                        }
+                        if (userGuess === "i") {
+                            underscore2 = "I";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3;
+                        }
+                        if (userGuess === "n") {
+                            underscore3 = "N";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3;
+                        }
+                    }
+                }
+            }
+            if (computerChooses === "squall") {
+                wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                document.onkeyup = function (event) {
+                    var userGuess = event.key;
+                    var wrongLetters = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "r", "t", "v", "w", "x", "y", "z"];
+                    if (userGuess === wrongLetters) {
+                        for (var j = 0; j < wrongLetters.arrayLength; j++) {
+                            lettersguessed.textContent = wrongLetters[j];
+                        }
+                    }
+                    if ((userGuess === "s") || (userGuess === "q") || (userGuess === "u") || (userGuess === "a") || (userGuess === "l")) {
+                        if (userGuess === "s") {
+                            underscore0 = "S";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "q") {
+                            underscore1 = "Q";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "u") {
+                            underscore2 = "U";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "a") {
+                            underscore3 = "A";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "l") {
+                            underscore4 = "L";
+                            underscore5 = "L";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                    }
+                }
+            }
+            if (computerChooses === "laguna") {
+                wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                document.onkeyup = function (event) {
+                    var userGuess = event.key;
+                    var wrongLetters = ["b", "c", "d", "e", "f", "h", "i", "j", "k", "m", "o", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+                    if (userGuess === wrongLetters) {
+                        for (var j = 0; j < wrongLetters.arrayLength; j++) {
+                            lettersguessed.textContent = wrongLetters[j];
+                        }
+                    }
+                    if ((userGuess === "l") || (userGuess === "a") || (userGuess === "g") || (userGuess === "u") || (userGuess === "n")) {
+                        if (userGuess === "l") {
+                            underscore0 = "L";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "a") {
+                            underscore1 = "A";
+                            underscore5 = "A";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "g") {
+                            underscore2 = "G";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "u") {
+                            underscore3 = "U";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                        if (userGuess === "n") {
+                            underscore4 = "N";
+                            wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        }
+                    }
                 }
             }
         }
