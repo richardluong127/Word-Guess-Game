@@ -10,7 +10,7 @@
 
 
 
-<body>
+<body id="game">
     <h1 id="FF8wordGuessGame">FF8 Word Guess Game</h1>
 
     <h3>Press any key to get started!</h3>
@@ -19,8 +19,10 @@
     <p id="underscores"></p>
     <br>
     <!--<p id="lettersguessed"></p>-->
-    <p id="victories">Victory:</p>
+    <p id="lettersguessed">Letters Guessed:</p>
+    <p id="victory">Victory:</p>
     <p id="gameover">Game Over:</p>
+
 
 
     <script type="text/javascript">
@@ -59,7 +61,10 @@
 
         var wordGuessText = document.getElementById("wordguesstext");
         var underscoresText = document.getElementById("underscores");
-        
+        var victoryText = document.getElementById("victory");
+        var victory = 0;
+        var gameover = 0;
+        var lettersGuessedText = document.getElementById("lettersguessed")
 
         //indexOf
         //charAt
@@ -68,9 +73,13 @@
             var userStart = event.key;
             var computerChooses = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             console.log(computerChooses);
-           // for ( var f=0; f<7; f++) {
+            //     for (var f = 0; f < 7; f++) {
+            //         if ((wordCorrectGuess === "C H O C O B O") || (wordCorrectGuess === "R I N O A") || (wordCorrectGuess === "O D I N") || (wordCorrectGuess === "S Q U A L L") || (wordCorrectGuess === "L A G U N A")) {
+            //             console.log(victory);
+            //             victory++;
+            //victoryText.textContent = "Victory:"; wordCorrectGuess.textContent[f];}
 
-            
+
             if (computerChooses === "chocobo") {
                 wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
                 //for (var i = 0; i < 7; i++) {
@@ -78,16 +87,20 @@
                 document.onkeyup = function (event) {
                     var userGuess = event.key;
                     var wrongLetters = ["a", "d", "e", "f", "g", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-                    if (userGuess === wrongLetters) {
-                        for (var j = 0; j < wrongLetters.arrayLength; j++) {
-                            lettersguessed.textContent = wrongLetters[j];
-                        }
-                    }
-                    if ((userGuess === "c") || (userGuess === "o") || (userGuess === "b") || (userGuess === "h"))
-                    //if (userGuessLetters[i].charAt(0) === "c" && userGuessLetters[i].charAt(3) === "c")
-                    //|| userGuessLetters[i].charAt(1) === "h" || userGuessLetters[i].charAt(2) === "o" || userGuessLetters[i].charAt(3) === "c" || userGuessLetters[i].charAt(4) === "o"
-                    //|| userGuessLetters[i].charAt(5) === "b" || userGuessLetters[i].charAt(6) === "o") 
-                    {
+                    //for (var j = 0; j < 7; j++) {
+                    //if (userGuess = wrongLetters) {
+                    //lettersGuessedText.textContent = "Letters Guessed:";
+                    //console.log("wrong");
+                    //if (j === 7) {
+                    //    gameover.textContent++;}}
+                    //}
+
+
+                    if ((userGuess === "c") || (userGuess === "o") || (userGuess === "b") || (userGuess === "h")) {
+                        //if (userGuessLetters[i].charAt(0) === "c" && userGuessLetters[i].charAt(3) === "c")
+                        //|| userGuessLetters[i].charAt(1) === "h" || userGuessLetters[i].charAt(2) === "o" || userGuessLetters[i].charAt(3) === "c" || userGuessLetters[i].charAt(4) === "o"
+                        //|| userGuessLetters[i].charAt(5) === "b" || userGuessLetters[i].charAt(6) === "o") 
+
                         if (userGuess === "c") {
                             underscore0 = "C";
                             underscore3 = "C";
@@ -107,9 +120,19 @@
                             underscore5 = "B";
                             wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6;
                         }
+                        //for (var i = 0; i < 7; i++) {
+                        if ((underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5 + " " + underscore6) === "C H O C O B O") {
+                            console.log("victory");
+                            //alert("Victory!");
+                            function myFunction() {
+                                document.getElementById("game").reset();
+                            }
+                            //}
+                        }
                     }
                 }
             }
+
             if (computerChooses === "rinoa") {
                 wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
                 document.onkeyup = function (event) {
@@ -140,6 +163,8 @@
                         if (userGuess === "a") {
                             underscore4 = "A";
                             wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4;
+                        } if ((underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4) === "R I N O A") {
+                            console.log("victory");
                         }
                     }
                 }
@@ -170,6 +195,8 @@
                         if (userGuess === "n") {
                             underscore3 = "N";
                             wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3;
+                        } if ((underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3) === "O D I N") {
+                            console.log("victory");
                         }
                     }
                 }
@@ -205,6 +232,8 @@
                             underscore4 = "L";
                             underscore5 = "L";
                             wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
+                        } if ((underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5) === "S Q U A L L") {
+                            console.log("victory");
                         }
                     }
                 }
@@ -241,10 +270,16 @@
                             underscore4 = "N";
                             wordGuessText.textContent = underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5;
                         }
+                        if ((underscore0 + " " + underscore1 + " " + underscore2 + " " + underscore3 + " " + underscore4 + " " + underscore5) === "L A G U N A") {
+                            console.log("victory");
+                        }
                     }
                 }
             }
-        }
+        };
+
+
+
 
 //if (userGuess===)
 
